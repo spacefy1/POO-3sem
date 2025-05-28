@@ -1,0 +1,38 @@
+package com.mycompany.pokemonpoo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class WaterPokemon extends Pokemon implements IPokemon {
+    private static final String TYPE = "water";
+    
+    //atributos
+    private List<Pokemon> pokemons = new ArrayList<>();
+
+    //constructor da superclasse pokemon
+    public WaterPokemon(int hp, String name, String weakness, String strength, String resistance, int Atk, String noise) {
+        super(hp, name, weakness, strength, resistance, Atk, noise);
+        this.setType(TYPE);
+    }
+
+    //metodos da interface IPokemon
+    @Override
+    public void attack() {
+        System.out.println(this.getName() + " has attacked!!");
+    }
+
+    @Override
+    public void pokemonNoise() {
+        System.out.println(this.getNoise());
+    }
+    
+    @Override
+    public void showDetails() {
+        System.out.println("Pokemon{" + "hp=" + this.getHp() + ", name=" + 
+                            this.getName() + ", type=" + this.getType() + ", weakness=" + this.getWeakness() +
+                            "strength=" + this.getStrength() + ", resistance=" + this.getResistance() + ", Atk=" + this.getAtk() 
+                            + ", noise=" + this.getNoise() + '}');
+
+    }
+}   
+
